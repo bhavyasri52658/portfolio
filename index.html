@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavya sri Interactive Profile Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            margin: 0;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 30px;
+            width: 300px;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out; 
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px); 
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #6200ea; 
+        }
+
+        h2 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        p {
+            margin: 0 0 15px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .email {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .show-more-btn {
+            background-color: #4CAF50; 
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background-color: #45a049;
+        }
+
+        .additional-details {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            text-align: left;
+            overflow: hidden; 
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            max-height: 0; 
+            opacity: 0; 
+        }
+
+        .additional-details.show {
+            max-height: 200px; 
+            opacity: 1;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .detail-item i {
+            margin-right: 10px;
+            color: #6200ea;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="profile-card">
+        <h2>Bhavya sri</h2>
+        <p>Student</p>
+        <p><a href="mailto:pedapatnambhavyasri@gmail.com" class="email">pedapatnambhavyasri@gmail.com</a></p>
+
+        <button class="show-more-btn" id="toggleDetailsBtn">Show More</button>
+
+        <div class="additional-details" id="additionalDetails">
+            <div class="detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Narsapuram, Andhra Pradesh</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Skills: Html, CSS, JavaScript, Java Programming</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('toggleDetailsBtn');
+        const additionalDetails = document.getElementById('additionalDetails');
+
+        toggleButton.addEventListener('click', () => {
+            additionalDetails.classList.toggle('show');
+
+            if (additionalDetails.classList.contains('show')) {
+                toggleButton.textContent = 'Show Less';
+            } else {
+                toggleButton.textContent = 'Show More';
+            }
+        });
+    </script>
+
+</body>
+</html>
